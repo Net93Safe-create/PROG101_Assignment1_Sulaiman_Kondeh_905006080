@@ -52,91 +52,88 @@ availability, staff training, maintenance, privacy, and the cost of operating th
 automatically mean that implementation and support are free.
 
 ## ALGORITHM AND PSEUDOCODE
-PSEUDOCODE – SCHOOL ATTENDANCE MANAGEMENT SYSTEM
-MAIN PROGRAM
+1. PSEUDOCODE - Main Program
 BEGIN
-DECLARE choice AS INTEGER
-REPEAT
-DISPLAY "SCHOOL ATTENDANCE MANAGEMENT SYSTEM"
-DISPLAY "1. Register Student"
-DISPLAY "2. Mark Attendance"
-DISPLAY "3. View Attendance Report"
-DISPLAY "4. Exit"
-INPUT choice
-IF choice = 1 THEN
-CALL RegisterStudent
-ELSE IF choice = 2 THEN
-CALL MarkAttendance
-ELSE IF choice = 3 THEN
-CALL ViewAttendanceReport
-ELSE IF choice = 4 THEN
-DISPLAY "Thank you for using the system"
-ELSE
-DISPLAY "Invalid choice. Please select 1 to 4"
-END IF
-UNTIL choice = 4
-END
-MODULE RegisterStudent
-BEGIN
-INPUT studentID
-INPUT studentName
-INPUT className
-IF studentID = EMPTY OR studentName = EMPTY OR className = EMPTY THEN
-DISPLAY "Please complete all required fields"
-ELSE IF studentID already exists THEN
-DISPLAY "Student ID already registered"
-ELSE
-SAVE studentID, studentName, className
-DISPLAY "Student registered successfully"
-END IF
-END
 
-MODULE MarkAttendance
-BEGIN
-INPUT staffID
-IF staffID is not authorised THEN
-DISPLAY "Access denied"
-ELSE
-INPUT className
-INPUT attendanceDate
-LOAD students in className
-IF no students are found THEN
-DISPLAY "No students registered for this class"
-ELSE
-FOR EACH student IN studentList
-DISPLAY studentID, studentName
-DISPLAY "Enter P for Present, A for Absent, L for Late"
-INPUT status
-WHILE status is not P AND status is not A AND status is not L
-DISPLAY "Invalid status. Enter P, A, or L"
-INPUT status
-END WHILE
-IF attendance record already exists for studentID and attendanceDate THEN
-DISPLAY "Duplicate attendance record - not saved"
-ELSE
-END IF
-SAVE studentID, className, attendanceDate, status, staffID
-END FOR
-END IF
-DISPLAY "Attendance processing completed"
-END IF
+    DECLARE choice AS INTEGER
+
+    DISPLAY "SCHOOL ATTENDANCE SYSTEM"
+    DISPLAY "1. Register Student"
+    DISPLAY "2. Mark Attendance"
+    DISPLAY "3. View Attendance Report"
+    DISPLAY "4. Exit"
+
+    REPEAT
+
+        DISPLAY "Enter your choice:"
+        INPUT choice
+
+        IF choice = 1 THEN
+            CALL RegisterStudent
+
+        ELSE IF choice = 2 THEN
+            CALL MarkAttendance
+
+        ELSE IF choice = 3 THEN
+            CALL ViewAttendanceReport
+
+        ELSE IF choice = 4 THEN
+            DISPLAY "Thank you for using the system."
+
+        ELSE
+            DISPLAY "Invalid choice. Please try again."
+
+        END IF
+
+    UNTIL choice = 4
+
 END
-MODULE MarkAttendance
-BEGIN
-INPUT className
-INPUT startDate
-INPUT endDate
-SEARCH attendance records for className between startDate and endDate
-IF no matching records are found THEN
-DISPLAY "No attendance records found"
-ELSE
-COUNT Present records
-COUNT Absent records
-COUNT Late records
-DISPLAY attendance details
-DISPLAY Present total, Absent total, Late total
-END IF
-END
+BEGIN MarkAttendance
+
+    DECLARE studentID AS STRING
+    DECLARE attendanceStatus AS STRING
+    DECLARE attendanceDate AS DATE
+
+    DISPLAY "MARK STUDENT ATTENDANCE"
+
+    DISPLAY "Enter Student ID:"
+    INPUT studentID
+
+    IF studentID EXISTS IN student records THEN
+
+        DISPLAY "Enter Attendance Date:"
+        INPUT attendanceDate
+
+        DISPLAY "Select Attendance Status:"
+        DISPLAY "1. Present"
+        DISPLAY "2. Absent"
+
+        INPUT attendanceStatus
+
+        IF attendanceStatus = 1 THEN
+            SAVE attendance as "Present"
+
+        ELSE IF attendanceStatus = 2 THEN
+            SAVE attendance as "Absent"
+
+        ELSE
+            DISPLAY "Invalid attendance status."
+            RETURN
+
+        END IF
+
+        SAVE studentID, attendanceDate AND attendanceStatus
+
+        DISPLAY "Attendance recorded successfully."
+
+    ELSE
+
+        DISPLAY "Student ID not found."
+
+    END IF
+
+END MarkAttendance
 
 ## FLOWCHART
 Flowchart 1:Main program and menu navigation
+
