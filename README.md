@@ -52,7 +52,6 @@ availability, staff training, maintenance, privacy, and the cost of operating th
 automatically mean that implementation and support are free.
 
 ## ALGORITHM AND PSEUDOCODE
-1. PSEUDOCODE - Main Program
 BEGIN
 
     DECLARE choice AS INTEGER
@@ -88,6 +87,10 @@ BEGIN
     UNTIL choice = 4
 
 END
+
+
+
+
 BEGIN MarkAttendance
 
     DECLARE studentID AS STRING
