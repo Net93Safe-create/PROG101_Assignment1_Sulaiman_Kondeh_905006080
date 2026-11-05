@@ -136,4 +136,5 @@ END MarkAttendance
 
 ## FLOWCHART
 Flowchart 1:Main program and menu navigation
+![Main Program Flowchart](Flowchart_1_Main_Program.png)
 
