@@ -137,4 +137,6 @@ END MarkAttendance
 ## FLOWCHART
 Flowchart 1:Main program and menu navigation
 ![Main Program Flowchart](Flowchart_1_Main_Program.png)
+Flowchart 2:Mark Attendance System 
+![Mark Attendance Module](Flowchart_2_Mark_Attendance.png)
 
